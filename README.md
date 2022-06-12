@@ -1,7 +1,7 @@
 # Head-Up Display (HUD) Extension for Gig Performer
 
 ## Overview
-An extension for [Gig Performer](https://gigperformer.com) that adds GPScript functions to display a head-up display (HUD) window. A basic knowledge of Gig Performer's scripting language ([GPScript](https://gigperformer.com/support.html)) will be required in order to use this extension.  
+An extension for [Gig Performer](https://gigperformer.com) that adds _GPScript_ functions to display a head-up display (HUD) window. A basic knowledge of Gig Performer's scripting language ([GPScript](https://gigperformer.com/support.html)) will be required in order to use this extension.  
 <br />
 
 ![gp-hud](https://user-images.githubusercontent.com/107261652/173226307-dc64fd7b-d12c-48b2-bdff-eda20a4986a9.gif)
