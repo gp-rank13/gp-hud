@@ -13,7 +13,7 @@ An extension for [Gig Performer](https://gigperformer.com) that adds _GPScript_ 
 
 ## Installation
 
-Download the extension (library) files for either MacOS or Windows from the Releases page.  
+Download the extension (library) files for either MacOS or Windows from the [Releases](https://github.com/gp-rank13/gp-hud/releases) page.  
 
 Mac users will need to move the _libGP_HUD.dylib_ file into this folder and then restart Gig Performer:
 ```
