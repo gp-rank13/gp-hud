@@ -13,8 +13,8 @@ namespace gigperformer {
 // *** Global Variables *** 
 
 std::string HUD_Text = "GP HUD";
-int HUD_Duration = 0;
-int HUD_Font_Size = 24;
+int HUD_Duration = 2000;
+int HUD_Font_Size = 48;
 
 // *** GP Script *** 
 
