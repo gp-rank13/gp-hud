@@ -38,7 +38,7 @@ void HUDWindow::finalize()
 }
 
 void HUDWindow::showHUD() {
-    if (myInstance != nullptr)
+    if (myInstance != nullptr and myInstance->hud != nullptr)
     {
         MessageManager::getInstance()->callAsync([]() {
                                                         myInstance->hud->setVisible(false);
@@ -50,7 +50,7 @@ void HUDWindow::showHUD() {
 }
 
 void HUDWindow::hideHUD() {
-    if (myInstance != nullptr)
+    if (myInstance != nullptr and myInstance->hud != nullptr)
     {
         MessageManager::getInstance()->callAsync([]() {
                                                         myInstance->hud->setVisible(false);
@@ -59,7 +59,7 @@ void HUDWindow::hideHUD() {
 }
 
 void HUDWindow::setHUDSize(int width, int height) {
-    if (myInstance != nullptr)
+    if (myInstance != nullptr and myInstance->hud != nullptr)
     {
         auto bounds = myInstance->hud->getBounds();
         int x = bounds.getX();
@@ -74,7 +74,7 @@ void HUDWindow::setHUDSize(int width, int height) {
 }
 
 void HUDWindow::setHUDPosition(int x, int y) {
-    if (myInstance != nullptr)
+    if (myInstance != nullptr and myInstance->hud != nullptr)
     {
         auto bounds = myInstance->hud->getBounds();
         int width = bounds.getWidth();
@@ -89,7 +89,7 @@ void HUDWindow::setHUDPosition(int x, int y) {
 }
 
 void HUDWindow::setHUDPositionSize(int x, int y, int width, int height) {
-    if (myInstance != nullptr)
+    if (myInstance != nullptr and myInstance->hud != nullptr)
     {
         MessageManager::getInstance()->callAsync([x,y,width,height]() {
                                                         myInstance->hud->setBounds(x, y, width, height);
@@ -98,7 +98,7 @@ void HUDWindow::setHUDPositionSize(int x, int y, int width, int height) {
 }
 
 void HUDWindow::setHUDPositionByName(std::string positionName) {
-    if (myInstance != nullptr)
+    if (myInstance != nullptr and myInstance->hud != nullptr)
     {
         auto bounds = myInstance->hud->getBounds();
         Rectangle<int> area (0, 0, bounds.getWidth(), bounds.getHeight());
@@ -151,7 +151,7 @@ void HUDWindow::setHUDPositionByName(std::string positionName) {
 }
 
 void HUDWindow::setHUDNamedPositionSize(std::string positionName, int width, int height) {
-   if (myInstance != nullptr)
+   if (myInstance != nullptr and myInstance->hud != nullptr)
     {
         Rectangle<int> area (0, 0, width, height);
         Rectangle<int> result; 
@@ -205,7 +205,7 @@ void HUDWindow::setHUDNamedPositionSize(std::string positionName, int width, int
 }
 
 void HUDWindow::setHUDDuration(int ms) {
-    if (myInstance != nullptr)
+    if (myInstance != nullptr and myInstance->hud != nullptr)
     {
         MessageManager::getInstance()->callAsync([ms]() {
                                                         myInstance->hudTimer->stopTimer();

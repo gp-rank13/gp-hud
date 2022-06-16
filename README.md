@@ -62,17 +62,12 @@ Var
     Duration : Integer = 1500 // Set default duration to display the window (1.5 seconds)
     HUD_Size : Integer Array = [450,150] // Set default width and height
 
-// Called automatically after script is loaded
-Initialization
-    GPHUD_SetFontSize(FontSize)
-    GPHUD_SetDuration(Duration) 
-End
-
 // Function to display the variation name in the HUD in the upper-right corner
 Function DisplayVariationName()
+    GPHUD_SetFontSize(FontSize)
+    GPHUD_SetDuration(Duration) 
     GPHUD_SetNamedPositionAndSize("TopRight", HUD_Size[0], HUD_Size[1])
     GPHUD_DisplayText(GetVariationName(GetCurrentVariation()))
-
 End
 
 // Called when you switch to another rackspace
