@@ -38,7 +38,7 @@ void HUDWindow::finalize()
 }
 
 void HUDWindow::showHUD() {
-    if (myInstance != nullptr and myInstance->hud != nullptr)
+    if (myInstance != nullptr and myInstance->hud != nullptr and myInstance->hudTimer != nullptr)
     {
         MessageManager::getInstance()->callAsync([]() {
                                                         myInstance->hud->setVisible(false);
