@@ -41,6 +41,8 @@ After installing the extension, custom GPScript functions will be available to u
 
 > **SetDuration** : _Set the duration in milliseconds for the HUD window to be displayed_
 > - GPHUD_SetDuration (ms : Integer)
+> - Tip: Use -1 as the duration to permanently display the window.  
+>  Double-click to close the window, or by setting a duration of 0ms (refer to example below)
 
 <br />
 

@@ -45,7 +45,7 @@ void HUDWindow::showHUD() {
                                                         myInstance->hud->setVisible(true);
                                                         if (HUD_Duration >= 0)
                                                             myInstance->hudTimer->startTimer(HUD_Duration);
-                                                            });
+                                                    });
     }
 }
 
@@ -205,7 +205,7 @@ void HUDWindow::setHUDNamedPositionSize(std::string positionName, int width, int
 }
 
 void HUDWindow::setHUDDuration(int ms) {
-    if (myInstance != nullptr and myInstance->hud != nullptr)
+    if (myInstance != nullptr and myInstance->hud != nullptr and myInstance->hudTimer != nullptr )
     {
         MessageManager::getInstance()->callAsync([ms]() {
                                                         myInstance->hudTimer->stopTimer();

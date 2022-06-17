@@ -14,7 +14,7 @@ namespace gigperformer {
 
 std::string HUD_Text = "GP HUD";
 int HUD_Duration = 2000;
-int HUD_Font_Size = 48;
+int HUD_Font_Size = 80;
 
 // *** GP Script *** 
 

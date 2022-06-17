@@ -73,7 +73,7 @@ private:
     {
         hud.reset (new HUDContainer ());
         hud->addToDesktop (ComponentPeer::windowIsTemporary);
-        Rectangle<int> area (0, 0, 200, 100);
+        Rectangle<int> area (0, 0, 500, 150); // Default position, width and height
         hud->setBounds (area);
         hud->setAlwaysOnTop (true);
         hud->setVisible (false);
