@@ -57,18 +57,18 @@ After installing the extension, custom GPScript functions will be available to u
 
 **Example 1**
 
-Add this as a _Gig Script_ in order to automatically display the Variation name in the upper-right corner.
+Add this as a _Gig Script_ in order to automatically display the Variation name in the center of the screen.
 ```
 Var
     FontSize : Integer = 80 // Set default font size
     Duration : Integer = 1500 // Set default duration to display the window (1.5 seconds)
     HUD_Size : Integer Array = [450,150] // Set default width and height
 
-// Function to display the variation name in the HUD in the upper-right corner
+// Function to display the variation name in the HUD in the center of the screen
 Function DisplayVariationName()
     GPHUD_SetFontSize(FontSize)
     GPHUD_SetDuration(Duration) 
-    GPHUD_SetNamedPositionAndSize("TopRight", HUD_Size[0], HUD_Size[1])
+    GPHUD_SetNamedPositionAndSize("Center", HUD_Size[0], HUD_Size[1])
     GPHUD_DisplayText(GetVariationName(GetCurrentVariation()))
 End
 
@@ -85,7 +85,7 @@ End
 
 **Example 2**
 
-Add this to a _Rackspace Script_ in order to display a custom message in the center of the screen when you press a button widget.
+Add this to a _Rackspace Script_ in order to display a custom message in the top-right corner of the screen when you press a button widget.
 ```
 Var
    HUD_Widget : Widget // Add a button widget with this name
@@ -97,7 +97,7 @@ Var
 // Called automatically after script is loaded
 Initialization
     GPHUD_SetFontSize(FontSize)
-    GPHUD_SetNamedPositionAndSize("Center",500,100) // Window will appear in the center of the screen
+    GPHUD_SetNamedPositionAndSize("TopRight",500,100) // Window will appear in the top-right corner of the screen
 End
 
 // Called when a single widget value has changed
