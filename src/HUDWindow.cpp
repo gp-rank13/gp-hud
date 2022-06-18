@@ -38,7 +38,8 @@ void HUDWindow::finalize()
     }
 }
 
-void HUDWindow::showHUD() {
+void HUDWindow::showHUD()
+{
     if (myInstance != nullptr and myInstance->hud != nullptr and myInstance->hudTimer != nullptr)
     {
         MessageManager::getInstance()->callAsync([]() {
@@ -50,7 +51,8 @@ void HUDWindow::showHUD() {
     }
 }
 
-void HUDWindow::hideHUD() {
+void HUDWindow::hideHUD()
+{
     if (myInstance != nullptr and myInstance->hud != nullptr)
     {
         MessageManager::getInstance()->callAsync([]() {
@@ -59,7 +61,8 @@ void HUDWindow::hideHUD() {
     }
 }
 
-void HUDWindow::setHUDSize(int width, int height) {
+void HUDWindow::setHUDSize(int width, int height)
+{
     if (myInstance != nullptr and myInstance->hud != nullptr)
     {
         auto bounds = myInstance->hud->getBounds();
@@ -71,10 +74,10 @@ void HUDWindow::setHUDSize(int width, int height) {
                                                         myInstance->hud->setVisible(true);
                                                             });
     }
-
 }
 
-void HUDWindow::setHUDPosition(int x, int y) {
+void HUDWindow::setHUDPosition(int x, int y)
+{
     if (myInstance != nullptr and myInstance->hud != nullptr)
     {
         auto bounds = myInstance->hud->getBounds();
@@ -86,10 +89,10 @@ void HUDWindow::setHUDPosition(int x, int y) {
                                                         myInstance->hud->setVisible(true);
                                                             });
     }
-
 }
 
-void HUDWindow::setHUDPositionSize(int x, int y, int width, int height) {
+void HUDWindow::setHUDPositionSize(int x, int y, int width, int height)
+{
     if (myInstance != nullptr and myInstance->hud != nullptr)
     {
         MessageManager::getInstance()->callAsync([x,y,width,height]() {
@@ -98,48 +101,55 @@ void HUDWindow::setHUDPositionSize(int x, int y, int width, int height) {
     }
 }
 
-void HUDWindow::setHUDPositionByName(std::string positionName) {
+void HUDWindow::setHUDPositionByName(std::string positionName)
+{
     if (myInstance != nullptr and myInstance->hud != nullptr)
     {
         auto bounds = myInstance->hud->getBounds();
         Rectangle<int> area (0, 0, bounds.getWidth(), bounds.getHeight());
         Rectangle<int> result; 
-        if (positionName == "Center") {
+        if (positionName == "Center")
+        {
                 RectanglePlacement placement (RectanglePlacement::xMid
                                        | RectanglePlacement::yMid
                                        | RectanglePlacement::doNotResize);
 
         result = placement.appliedTo (bounds, Desktop::getInstance().getDisplays()
                                                          .getPrimaryDisplay()->userArea.reduced (0));
-        } else if (positionName == "TopRight") {
+        } else if (positionName == "TopRight")
+        {
             RectanglePlacement placement (RectanglePlacement::xRight
                                        | RectanglePlacement::yTop
                                        | RectanglePlacement::doNotResize);
 
         result = placement.appliedTo (bounds, Desktop::getInstance().getDisplays()
                                                          .getPrimaryDisplay()->userArea.reduced (0));
-        } else if (positionName == "TopRight") {
+        } else if (positionName == "TopRight")
+        {
             RectanglePlacement placement (RectanglePlacement::xRight
                                        | RectanglePlacement::yTop
                                        | RectanglePlacement::doNotResize);
 
         result = placement.appliedTo (bounds, Desktop::getInstance().getDisplays()
                                                          .getPrimaryDisplay()->userArea.reduced (0));
-        } else if (positionName == "TopLeft") {
+        } else if (positionName == "TopLeft")
+        {
             RectanglePlacement placement (RectanglePlacement::xLeft
                                        | RectanglePlacement::yTop
                                        | RectanglePlacement::doNotResize);
 
         result = placement.appliedTo (bounds, Desktop::getInstance().getDisplays()
                                                          .getPrimaryDisplay()->userArea.reduced (0));
-        } else if (positionName == "TopCenter") {
+        } else if (positionName == "TopCenter")
+        {
             RectanglePlacement placement (RectanglePlacement::xMid
                                        | RectanglePlacement::yTop
                                        | RectanglePlacement::doNotResize);
 
         result = placement.appliedTo (bounds, Desktop::getInstance().getDisplays()
                                                          .getPrimaryDisplay()->userArea.reduced (0));
-        } else {
+        } else
+        {
             
             result = bounds;
         }
@@ -151,47 +161,54 @@ void HUDWindow::setHUDPositionByName(std::string positionName) {
     }
 }
 
-void HUDWindow::setHUDNamedPositionSize(std::string positionName, int width, int height) {
+void HUDWindow::setHUDNamedPositionSize(std::string positionName, int width, int height)
+{
    if (myInstance != nullptr and myInstance->hud != nullptr)
     {
         Rectangle<int> area (0, 0, width, height);
         Rectangle<int> result; 
-        if (positionName == "Center") {
+        if (positionName == "Center")
+        {
                 RectanglePlacement placement (RectanglePlacement::xMid
                                        | RectanglePlacement::yMid
                                        | RectanglePlacement::doNotResize);
 
         result = placement.appliedTo (area, Desktop::getInstance().getDisplays()
                                                          .getPrimaryDisplay()->userArea.reduced (0));
-        } else if (positionName == "TopRight") {
+        } else if (positionName == "TopRight")
+        {
             RectanglePlacement placement (RectanglePlacement::xRight
                                        | RectanglePlacement::yTop
                                        | RectanglePlacement::doNotResize);
 
         result = placement.appliedTo (area, Desktop::getInstance().getDisplays()
                                                          .getPrimaryDisplay()->userArea.reduced (0));
-        } else if (positionName == "TopRight") {
+        } else if (positionName == "TopRight")
+        {
             RectanglePlacement placement (RectanglePlacement::xRight
                                        | RectanglePlacement::yTop
                                        | RectanglePlacement::doNotResize);
 
         result = placement.appliedTo (area, Desktop::getInstance().getDisplays()
                                                          .getPrimaryDisplay()->userArea.reduced (0));
-        } else if (positionName == "TopLeft") {
+        } else if (positionName == "TopLeft")
+        {
             RectanglePlacement placement (RectanglePlacement::xLeft
                                        | RectanglePlacement::yTop
                                        | RectanglePlacement::doNotResize);
 
         result = placement.appliedTo (area, Desktop::getInstance().getDisplays()
                                                          .getPrimaryDisplay()->userArea.reduced (0));
-        } else if (positionName == "TopCenter") {
+        } else if (positionName == "TopCenter")
+        {
             RectanglePlacement placement (RectanglePlacement::xMid
                                        | RectanglePlacement::yTop
                                        | RectanglePlacement::doNotResize);
 
         result = placement.appliedTo (area, Desktop::getInstance().getDisplays()
                                                          .getPrimaryDisplay()->userArea.reduced (0));
-        } else {
+        } else
+        {
             auto bounds = myInstance->hud->getBounds();
             bounds.setWidth(width);
             bounds.setHeight(height);
@@ -205,7 +222,8 @@ void HUDWindow::setHUDNamedPositionSize(std::string positionName, int width, int
     }
 }
 
-void HUDWindow::setHUDDuration(int ms) {
+void HUDWindow::setHUDDuration(int ms)
+{
     if (myInstance != nullptr and myInstance->hud != nullptr and myInstance->hudTimer != nullptr )
     {
         MessageManager::getInstance()->callAsync([ms]() {
@@ -218,20 +236,21 @@ void HUDWindow::setHUDDuration(int ms) {
 }
 
 void HUDContainer::paint (Graphics& g)
-    {
-        auto area = getLocalBounds().toFloat().reduced (0.8f);
-        float cornerSize = 8.f;
-        g.setColour (Colour(0xdd151515));
-        g.fillRoundedRectangle (area, cornerSize);
-        auto fontSize = (float) HUD_Font_Size;
-        g.setFont (fontSize);
-        g.setColour (Colours::white);
-        g.drawFittedText (HUD_Text,
-                          getLocalBounds().reduced (8, 0),
-                          Justification::centred, 5);
-    }
+{
+    auto area = getLocalBounds().toFloat().reduced (0.8f);
+    float cornerSize = 8.f;
+    g.setColour (Colour(0xdd151515));
+    g.fillRoundedRectangle (area, cornerSize);
+    auto fontSize = (float) HUD_Font_Size;
+    g.setFont (fontSize);
+    g.setColour (Colours::white);
+    g.drawFittedText (HUD_Text,
+                        getLocalBounds().reduced (8, 0),
+                        Justification::centred, 5);
+}
 
-    void myHUDTimer::timerCallback() {
-        HUDWindow::hideHUD();
-        this->stopTimer();
-    }
+void myHUDTimer::timerCallback()
+{
+    HUDWindow::hideHUD();
+    this->stopTimer();
+}

@@ -1,4 +1,3 @@
-
 // HUD extension for Gig Performer by @rank13
 
 #pragma once
@@ -21,18 +20,18 @@ public:
         this->setVisible(false);
       }
   }
-    void mouseDown (const MouseEvent& e) override
-    {
-        dragger.startDraggingComponent (this, e);
-    }
+  void mouseDown (const MouseEvent& e) override
+  {
+      dragger.startDraggingComponent (this, e);
+  }
 
-    void mouseDrag (const MouseEvent& e) override
-    {
-        // As there's no titlebar we have to manage the dragging ourselves
-        dragger.dragComponent (this, e, nullptr);
-    }
+  void mouseDrag (const MouseEvent& e) override
+  {
+      // As there's no titlebar we have to manage the dragging ourselves
+      dragger.dragComponent (this, e, nullptr);
+  }
 
-    void paint (Graphics& g) override;
+  void paint (Graphics& g) override;
 
 private:
   ComponentDragger dragger;
@@ -49,35 +48,35 @@ public:
 class HUDWindow  : public Component 
 {
 public:
-    HUDWindow ();
-    ~HUDWindow() override;
+  HUDWindow ();
+  ~HUDWindow() override;
 
-    void static initialize(); // Call this to show the component
-    void static finalize(); // Call this when library is about to be unloaded to free resources
-    void static showHUD();
-    void static hideHUD();
-    void static setHUDSize(int width, int height);
-    void static setHUDPosition(int x, int y);
-    void static setHUDPositionByName(std::string positionName);
-    void static setHUDDuration(int ms);
-    void static setHUDPositionSize(int x, int y, int width, int height);
-    void static setHUDNamedPositionSize(std::string positionName, int width, int height);
+  void static initialize(); // Call this to show the component
+  void static finalize(); // Call this when library is about to be unloaded to free resources
+  void static showHUD();
+  void static hideHUD();
+  void static setHUDSize(int width, int height);
+  void static setHUDPosition(int x, int y);
+  void static setHUDPositionByName(std::string positionName);
+  void static setHUDDuration(int ms);
+  void static setHUDPositionSize(int x, int y, int width, int height);
+  void static setHUDNamedPositionSize(std::string positionName, int width, int height);
 
-    std::unique_ptr<Component> hud;
-    static HUDWindow* myInstance;
+  std::unique_ptr<Component> hud;
+  static HUDWindow* myInstance;
 
 private:
     std::unique_ptr<myHUDTimer> hudTimer;
 
   void showTransparentWindow()
-    {
-        hud.reset (new HUDContainer ());
-        hud->addToDesktop (ComponentPeer::windowIsTemporary);
-        Rectangle<int> area (0, 0, 500, 150); // Default position, width and height
-        hud->setBounds (area);
-        hud->setAlwaysOnTop (true);
-        hud->setVisible (false);
-    }
+  {
+      hud.reset (new HUDContainer ());
+      hud->addToDesktop (ComponentPeer::windowIsTemporary);
+      Rectangle<int> area (0, 0, 500, 150); // Default position, width and height
+      hud->setBounds (area);
+      hud->setAlwaysOnTop (true);
+      hud->setVisible (false);
+  }
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (HUDWindow)
 };
