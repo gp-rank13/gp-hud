@@ -23,7 +23,6 @@ extern "C" void DisplayString(GPRuntimeEngine* vm)
    char buffer[1000];   
    GP_VM_PopString(vm, buffer, 1000);
    std::string s = buffer;
-   GP_VM_PushString(vm, s.c_str());
    HUD_Text = s;
    HUDWindow::showHUD();
 }

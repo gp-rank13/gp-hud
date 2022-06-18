@@ -15,6 +15,7 @@ HUDWindow::HUDWindow ()
 HUDWindow::~HUDWindow()
 {
     hud = nullptr;
+    hudTimer = nullptr;
 }
 
 void HUDWindow::initialize()
@@ -218,7 +219,7 @@ void HUDWindow::setHUDDuration(int ms) {
 
 void HUDContainer::paint (Graphics& g)
     {
-       auto area = getLocalBounds().toFloat().reduced (0.8f);
+        auto area = getLocalBounds().toFloat().reduced (0.8f);
         float cornerSize = 8.f;
         g.setColour (Colour(0xdd151515));
         g.fillRoundedRectangle (area, cornerSize);
